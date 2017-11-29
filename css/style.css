@@ -55,7 +55,7 @@ body {
 
 .text-box {
     position: absolute; /* absolute within it's parent */
-    top: 50%; /* the box element's starting y-axis point (which is the top edge of the box element) is now at 50% of the parent's height - but we still need to center the box element at the specified x,y point. */
+    top: 40%; /* the box element's starting y-axis point (which is the top edge of the box element) is now at 50% of the parent's height - but we still need to center the box element at the specified x,y point. */
     left: 50%; /* the box element's starting x-axis point (which is the left edge of the box element) is now at 50% of the parent's width - but we still need to center the box element at the specified x,y point. */
     transform: translate(-50%, -50%); /* this will shift our box element left and up by 50% of it's width and height - this will center the box at the x,y point specified by absolute and top/left sibling attributes. */
 }
