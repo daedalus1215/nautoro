@@ -36,5 +36,19 @@ body {
 
     background-size: cover;
     background-position: center; /* ensures that the center stays the same but bottom and top will crop as the width shrinks. */
+    position: relative;
+
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
 }
