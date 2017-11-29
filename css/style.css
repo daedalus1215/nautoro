@@ -6,3 +6,21 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+
+
+
+* {    
+    margin: 0; /* reset the margin and padding so browser's applied padding and margins can be removed. */
+    padding: 0;    
+    box-sizing: border-box; /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */
+}
+
+
+body {
+    font-family: "Lato", sans-serif; /* anything related to font we always set as high as the body, no higher (do not apply to universal select [*]) */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7; /* basically the line height is 1.7 x bigger than the predefined line height, that we would have before we added this. */
+    color: #777777;
+}
