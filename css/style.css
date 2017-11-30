@@ -71,8 +71,10 @@ body {
     font-weight: 400;
     letter-spacing: 35px;
 
+    /* A more explicit way doing animations vs .heading-primary-sub's implied way. */
     animation-name: moveInLeft;
     animation-duration: 1s; 
+    animation-timing-function: ease-out;
 }
 
 
@@ -81,6 +83,8 @@ body {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 17.4px;
+    /* A more implied way of doing animations vs .heading-primary-main's explicit way. */
+    animation: moveInRight 1s ease-out;
 }
 
 
@@ -101,3 +105,18 @@ body {
 }
 
 
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px); /* over shoot so we can snap back*/
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* snap back*/
+    }
+}
