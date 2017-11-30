@@ -72,7 +72,7 @@ body {
     letter-spacing: 35px;
 
     animation-name: moveInLeft;
-    animation-duration: 1s;
+    animation-duration: 1s; 
 }
 
 
@@ -91,11 +91,13 @@ body {
     }
 
     80% {
-
+        transform: translateX(10px); /* over shoot so we can snap back*/
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0); /* snap back*/
     }
 }
+
+
