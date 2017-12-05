@@ -6,202 +6,175 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-
-
-
 /* Let's to make sure all before and after pseudo elements get the affects too. */
 *,
 *::after,
-*::before {    
-    margin: 0; /* reset the margin and padding so browser's applied padding and margins can be removed. */
-    padding: 0;    
-    box-sizing: inherit; /* box-sizing set in body, and now we force inheritance. */    
-}
+*::before {
+  margin: 0;
+  /* reset the margin and padding so browser's applied padding and margins can be removed. */
+  padding: 0;
+  box-sizing: inherit;
+  /* box-sizing set in body, and now we force inheritance. */ }
 
 html {
-    font-size: 62.5%; /* Keep the font relative so the user's adjusted browser font size will be considered. Now rems can be used throughout the app cleanly.*/
-}
+  font-size: 62.5%;
+  /* Keep the font relative so the user's adjusted browser font size will be considered. Now rems can be used throughout the app cleanly.*/ }
 
 body {
-    font-family: "Lato", sans-serif; /* anything related to font we always set as high as the body, no higher (do not apply to universal select [*]) */
-    font-weight: 400;
-    line-height: 1.7; /* basically the line height is 1.7 x bigger than the predefined line height, that we would have before we added this. */
-    color: #777777;
-    padding: 30px;
-    box-sizing: border-box; /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */
-}
+  font-family: "Lato", sans-serif;
+  /* anything related to font we always set as high as the body, no higher (do not apply to universal select [*]) */
+  font-weight: 400;
+  line-height: 1.7;
+  /* basically the line height is 1.7 x bigger than the predefined line height, that we would have before we added this. */
+  color: #777777;
+  padding: 30px;
+  box-sizing: border-box;
+  /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */ }
 
 .header {
-    height: 95vh;
-    background-image: linear-gradient(
-       to right bottom,
-     rgba(126, 213, 111, 0.801), 
-     rgba(40, 180, 131, 0.801)), 
-    url(../img/hero.jpg);
-
-    background-size: cover;
-    background-position: center; /* ensures that the center stays the same but bottom and top will crop as the width shrinks. */
-    position: relative;
-
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  /* ensures that the center stays the same but bottom and top will crop as the width shrinks. */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
 
 .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
+  position: absolute;
+  top: 4rem;
+  left: 4rem; }
 
 .header__logo {
-    height: 3.5rem;
-}
+  height: 3.5rem; }
 
 .header__text-box {
-    position: absolute; /* absolute within it's parent */
-    top: 40%; /* the box element's starting y-axis point (which is the top edge of the box element) is now at 50% of the parent's height - but we still need to center the box element at the specified x,y point. */
-    left: 50%; /* the box element's starting x-axis point (which is the left edge of the box element) is now at 50% of the parent's width - but we still need to center the box element at the specified x,y point. */
-    transform: translate(-50%, -50%); /* this will shift our box element left and up by 50% of it's width and height - this will center the box at the x,y point specified by absolute and top/left sibling attributes. */
-    text-align: center; /* Makes sure the button element (inline-block [which is treated as text]) to center. */
-}
+  position: absolute;
+  /* absolute within it's parent */
+  top: 40%;
+  /* the box element's starting y-axis point (which is the top edge of the box element) is now at 50% of the parent's height - but we still need to center the box element at the specified x,y point. */
+  left: 50%;
+  /* the box element's starting x-axis point (which is the left edge of the box element) is now at 50% of the parent's width - but we still need to center the box element at the specified x,y point. */
+  transform: translate(-50%, -50%);
+  /* this will shift our box element left and up by 50% of it's width and height - this will center the box at the x,y point specified by absolute and top/left sibling attributes. */
+  text-align: center;
+  /* Makes sure the button element (inline-block [which is treated as text]) to center. */ }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
-
-    backface-visibility: hidden; /* this determines if the back part of an element (when we move it) is hidden. So the element behind the selected element - fixes the shaky animation issue that happens when you animate things (this element's children animate things). */
-}
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  backface-visibility: hidden;
+  /* this determines if the back part of an element (when we move it) is hidden. So the element behind the selected element - fixes the shaky animation issue that happens when you animate things (this element's children animate things). */ }
 
 .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-
-    /* A more explicit way doing animations vs .heading-primary-sub's implied way. */
-    animation-name: moveInLeft;
-    animation-duration: 1s; 
-    animation-timing-function: ease-out;
-}
-
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  /* A more explicit way doing animations vs .heading-primary-sub's implied way. */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out; }
 
 .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.7em;
-    /* A more implied way of doing animations vs .heading-primary-main's explicit way. */
-    animation: moveInRight 1s ease-out;
-}
-
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.7em;
+  /* A more implied way of doing animations vs .heading-primary-main's explicit way. */
+  animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
-
-    80% {
-        transform: translateX(1rem); /* over shoot so we can snap back*/
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0); /* snap back*/
-    }
-}
-
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem);
+    /* over shoot so we can snap back*/ }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* snap back*/ } }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-
-    80% {
-        transform: translateX(-1rem); /* over shoot so we can snap back*/
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0); /* snap back*/
-    }
-}
-
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem);
+    /* over shoot so we can snap back*/ }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* snap back*/ } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* snap back*/
-    }
-}
-
-
-
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* snap back*/ } }
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s; /* short hand transition for the hover and active*/
-    position: relative; /* This is so we can be in front of our pseudo element (::after) */    
-    font-size: 1.5rem;
-}
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  /* short hand transition for the hover and active*/
+  position: relative;
+  /* This is so we can be in front of our pseudo element (::after) */
+  font-size: 1.5rem; }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0,0,0, .2); /* x y blur color */
-}
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* x y blur color */ }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-}
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-    background-color: #fff;
-    color: #777;
-}
-
+  background-color: #ffffff;
+  color: #777777; }
 
 /* We are going to use the ::after pseudo-element to give the clicking effect. */
 .btn::after {
-    content: ""; /* in order for a pseudo-element to appear on the page we need to specify it's content property - so it's always necessary. */
-    display: inline-block; /* We want this element to be an inline-block, since the .btn is an inline-element */
-    height: 100%; /* 100% of the button */
-    width: 100%; /* 100% of the button */
-    border-radius: 100px; /* same as the button */
-
-    /* We do not want the ::after element to be below, but behind it's host element*/
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* push us behind our host element */
-    transition: all .4s;
-}
-
+  content: "";
+  /* in order for a pseudo-element to appear on the page we need to specify it's content property - so it's always necessary. */
+  display: inline-block;
+  /* We want this element to be an inline-block, since the .btn is an inline-element */
+  height: 100%;
+  /* 100% of the button */
+  width: 100%;
+  /* 100% of the button */
+  border-radius: 100px;
+  /* same as the button */
+  /* We do not want the ::after element to be below, but behind it's host element*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* push us behind our host element */
+  transition: all .4s; }
 
 .btn--white::after {
-    background-color: #fff;
-}
+  background-color: #ffffff; }
 
 /* Apply these attributes to the .btn as we hover, but only to it's ::after pseudo element */
 .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6); /* increase the element. */
-    opacity: 0;
-}
+  transform: scaleX(1.4) scaleY(1.6);
+  /* increase the element. */
+  opacity: 0; }
 
 .btn--animated {
-    animation: moveInBottom .5s ease-out .75s; /* animation-name animation-duration animation-timing animation-delay */
-    animation-fill-mode: backwards; /* Automatically apply the animation (@keyframes) 0% property while in the "delayed" state (induced by sibling animation property) - in this case, we are talking about @keyframes moveInBottom's properties. */
-}
+  animation: moveInBottom .5s ease-out .75s;
+  /* animation-name animation-duration animation-timing animation-delay */
+  animation-fill-mode: backwards;
+  /* Automatically apply the animation (@keyframes) 0% property while in the "delayed" state (induced by sibling animation property) - in this case, we are talking about @keyframes moveInBottom's properties. */ }
