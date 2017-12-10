@@ -1,0 +1,9 @@
+
+// we use this function so we can contain float elements within.
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
