@@ -103,7 +103,13 @@ body {
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-8 {
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
   margin-bottom: 8rem; }
 
 .header {
@@ -173,7 +179,7 @@ body {
   /* short hand transition for the hover and active*/
   position: relative;
   /* This is so we can be in front of our pseudo element (::after) */
-  font-size: 1.5rem; }
+  font-size: 1.6rem; }
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -213,5 +219,22 @@ body {
   /* animation-name animation-duration animation-timing animation-delay */
   animation-fill-mode: backwards;
   /* Automatically apply the animation (@keyframes) 0% property while in the "delayed" state (induced by sibling animation property) - in this case, we are talking about @keyframes moveInBottom's properties. */ }
+
+.btn-text:link, .btn-text:visited {
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  font-size: 1.6rem;
+  transition: all .2s; }
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #ffffff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+.btn-text:active {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
 
 /*# sourceMappingURL=main.css.map */
