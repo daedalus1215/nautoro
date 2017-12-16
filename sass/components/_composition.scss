@@ -2,10 +2,13 @@
     position: relative;
 
     &__photo {
-        width: 55%;
+        width: 55%; //always define width of images in %.
         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
         border-radius: 1px solid $color-primary;
         position: absolute;
+        z-index: 10; // must set a default z-index if we want to be applying the hover affect.
+        transition: all .2s;
+        outline-offset: 2rem; // gives us the space when we use an outline.
 
         &--p1 {
             left: 0;
@@ -21,5 +24,19 @@
             left: 20%;
             top: 10rem;
         }
+
+        // give us the hover affect.
+        &:hover {
+            outline: 1.5rem solid $color-primary; // creates the border
+
+            transform: scale(1.05) translateY(-.5em); // make the photo that is hovered over larger and adjust it's location.
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5); // add the shadow.
+            z-index: 20; // Make sure it is the closest photo on the z axis.
+        }
+    }
+
+    // When we hover over the composition, we want to select the photos that are not being hovered over.
+    &:hover &__photo:not(:hover){
+        transform: scale(.95);
     }
 }
