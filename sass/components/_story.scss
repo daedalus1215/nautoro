@@ -5,12 +5,31 @@
     background-color: $color-white;
     border-radius: 3px;
     padding: 6rem;
+    padding-left: 9rem; // make up for the transform.
     font-size: $default-font-size;
+    transform: skewX(-12deg);
 
     &__shape {
         width: 15rem;
         height: 15rem;
-        background-color: orangered;
         float: left;
+        
+        // This will make the text behave like it is wrapping around the circle.
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+
+        // this will shape the element so that it is a circle
+        clip-path: circle(50% at 50% 50%);
+
+        // push the text a little away from the circle.
+        transform: translateX(-3rem) skewX(12deg);
     }
+
+    &__img {
+        height: 100%;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }    
 }
