@@ -4,4 +4,12 @@
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: -1;
+    opacity: .2;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; // this is similar to background-size: cover for background images. This will make sure the element (video) will fill the entire parent, but also maintains it's aspect ratio.
+    }
 }
