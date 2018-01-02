@@ -1,0 +1,34 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    color:inherit;
+    font-family: inherit; // Browser's always set the font-family of form elements ot something other than what we set on the body.
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent; // This makes sure that when we focus on the field we do not push the one below it down by 3 px, because of the focus border.
+    width: 90%;
+    display: block;
+
+    
+    // pseudo element, not a pseudo class (which are for states, like focus).
+    &::-webkit-input-placeholder {
+        color: $color-grey-dark-2;
+      }
+
+    &:focus {
+      outline: none; // make sure that we do not highlight the field when the user selects.
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary; // we set our own manually.
+    }
+
+  }
+
+  &__label {
+  }
+}
