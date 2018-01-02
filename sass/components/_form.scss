@@ -4,7 +4,8 @@
   }
 
   &__input {
-    color:inherit;
+    outline: none; // make sure that we do not highlight the field when the user selects.
+    color: inherit;
     font-family: inherit; // Browser's always set the font-family of form elements ot something other than what we set on the body.
     font-size: 1.5rem;
     padding: 1.5rem 2rem;
@@ -15,20 +16,37 @@
     width: 90%;
     display: block;
 
-    
-    // pseudo element, not a pseudo class (which are for states, like focus).
-    &::-webkit-input-placeholder {
-        color: $color-grey-dark-2;
-      }
-
     &:focus {
       outline: none; // make sure that we do not highlight the field when the user selects.
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       border-bottom: 3px solid $color-primary; // we set our own manually.
     }
 
+    &:focus:invalid {
+        outline: none; // make sure that we do not highlight the field when the user selects.
+        border-bottom: 3px solid $color-secondary-dark; // we set our own manually.
+    }
+
+    // pseudo element, not a pseudo class (which are for states, like focus). This makes sure that we make the text as we type darker.
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
   }
 
   &__label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-left: 2rem;
+      margin-top: .7rem;
+      display: block;
+      transition: all .3s;
+  }
+
+
+//   input's placeholder when it is shown, look to the sibling adjacent element. Sibling selector needs to make sure that it honors the html order of elements.
+  &__input:placeholder-shown + &__label{
+    opacity: 0;
+    visibility: hidden; // cannot animate the visibility, but we can opacity.
+    transform: translateY(-4rem);
   }
 }
