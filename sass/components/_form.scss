@@ -51,6 +51,9 @@
     transform: translateY(-4rem);
   }
 
+  &__radio-input {
+    display: none;
+  }
 
   &__radio-group {
     width: 49%;
@@ -62,6 +65,7 @@
     cursor: pointer; //make it look like a link or something.
     position: relative;
     padding-left: 5rem;
+    
   }
 
   &__radio-button {
@@ -71,7 +75,7 @@
     border-radius: 50%;
     display: inline-block;
     position: absolute;
-    top:0;
+    top:-.5rem;
     left:0;
 
     &:after {
@@ -85,6 +89,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: $color-primary;
+      opacity: 0;
+      transition: opacity .2s;
     }
+  }
+
+  // select the input, checked element's sibling label's child's pseudo-after button
+  &__radio-input:checked ~ &__radio-input-label &__radio-button:after {
+    opacity: 1;
   }
 }
