@@ -15,6 +15,7 @@
     border-bottom: 3px solid transparent; // This makes sure that when we focus on the field we do not push the one below it down by 3 px, because of the focus border.
     width: 90%;
     display: block;
+    transition: all .3s;
 
     &:focus {
       outline: none; // make sure that we do not highlight the field when the user selects.
@@ -48,5 +49,42 @@
     opacity: 0;
     visibility: hidden; // cannot animate the visibility, but we can opacity.
     transform: translateY(-4rem);
+  }
+
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-input-label {
+    font-size: $default-font-size;
+    cursor: pointer; //make it look like a link or something.
+    position: relative;
+    padding-left: 5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
+    }
   }
 }
