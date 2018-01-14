@@ -7,6 +7,34 @@
     background-color: rgba($color-black, .8);
     z-index: 10000;
 
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    /* When the element is the target (basically when the url changes with target in ). */
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
     &__content {
         @include absCenter;
         width: 75%;
@@ -14,6 +42,7 @@
         box-shadow: 0 2rem 4rem rgba($color-black, .2);
         border-radius: 3px;
         display: table;
+        overflow: hidden;
     }
 
 
@@ -26,6 +55,7 @@
         width: 66.6666667%;
         display: table-cell;
         vertical-align: middle;
+        padding: 3rem 5rem;
     }
 
     &__img {
@@ -35,6 +65,17 @@
     }
 
     &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
 
+        // might need prefixes.
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light-2;
+
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto; // will automatically set hyphens for words as long as lang="en" in the html tag.
     }
 }
