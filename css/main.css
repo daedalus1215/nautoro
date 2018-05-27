@@ -1,3 +1,13 @@
+/**
+    MEDIA QUERY MANAGER 
+  $breakpoint argument choices:
+- phone                      - 0-600px (min)
+- tab-port  tablet portrait  - 600-900px (min)
+- tab-land  tablet landscape - 900-1200px (min)
+- normal    default          - 1200-1800px
+- big-desktop                - 1800px + (max)
+
+**/
 /* Let's to make sure all before and after pseudo elements get the affects too. */
 *,
 *::after,
@@ -9,8 +19,19 @@
   /* box-sizing set in body, and now we force inheritance. */ }
 
 html {
-  font-size: 62.5%;
-  /* Keep the font relative so the user's adjusted browser font size will be considered. Now rems can be used throughout the app cleanly.*/ }
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  box-sizing: border-box; }
 
 @keyframes moveInLeft {
   0% {
