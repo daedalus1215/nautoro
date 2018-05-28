@@ -7,6 +7,10 @@
 - normal    default          - 1200-1800px
 - big-desktop                - 1800px + (max)
 
+
+
+ORDER: Base + typography > general layout + grid > page layout > component
+
 **/
 /* Let's to make sure all before and after pseudo elements get the affects too. */
 *,
@@ -31,7 +35,12 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */
+  padding: 30px; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInLeft {
   0% {
@@ -69,10 +78,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   /* basically the line height is 1.7 x bigger than the predefined line height, that we would have before we added this. */
-  color: #777777;
-  padding: 30px;
-  box-sizing: border-box;
-  /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */ }
+  color: #777777; }
 
 .heading-primary {
   color: #ffffff;

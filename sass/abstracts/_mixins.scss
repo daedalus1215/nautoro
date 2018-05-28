@@ -26,6 +26,10 @@
 - normal    default          - 1200-1800px
 - big-desktop                - 1800px + (max)
 
+
+
+ORDER: Base + typography > general layout + grid > page layout > component
+
 **/
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
