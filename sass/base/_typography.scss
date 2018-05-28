@@ -24,6 +24,11 @@ body {
         animation-name: moveInLeft;
         animation-duration: 1s; 
         animation-timing-function: ease-out;
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
 
     &--sub {
@@ -33,6 +38,10 @@ body {
         letter-spacing: 1.7em;
         /* A more implied way of doing animations vs .heading-primary-main's explicit way. */
         animation: moveInRight 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
