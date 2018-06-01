@@ -30,7 +30,7 @@ html {
 
 body {
     box-sizing: border-box; /* Change the box model, so the borders and padding is not added to the total width & total height we specify for a box. */
-    padding: 30px;
+    padding: 3rem;
 
     @include respond(tab-port) { // width < 900
         padding: 0;

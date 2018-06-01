@@ -28,7 +28,8 @@
 
 
 
-ORDER: Base + typography > general layout + grid > page layout > component
+ORDER: Base + typography > (then) general layout + grid > (then) page layout > (then) component
+
 
 **/
 @mixin respond($breakpoint) {
