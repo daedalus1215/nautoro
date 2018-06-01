@@ -283,6 +283,10 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
 .navigation__background {
   height: 6rem;
   width: 6rem;
@@ -293,6 +297,10 @@ body {
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.67, -0.5, 0.6, 1.4); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 4rem;
+      right: 4rem; } }
 .navigation__nav {
   height: 100vh;
   position: fixed;
