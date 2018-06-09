@@ -17,6 +17,10 @@
     display: block;
     transition: all .3s;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none; // make sure that we do not highlight the field when the user selects.
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -61,7 +65,7 @@
 
     @include respond(tab-port) {
       width: 100%;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   }
 
