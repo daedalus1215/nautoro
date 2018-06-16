@@ -280,7 +280,10 @@
             <div class="row">
                 <div class="story">
                     <figure class="story__shape">
-                        <img src="img/nat-8.jpg" alt="Person on a tour" class="story__img">
+                        <img 
+                            src="img/nat-8.jpg" 
+                            alt="Person on a tour" 
+                            class="story__img">
                         <figcaption class="story__caption">Mary Smith</figcaption>
                     </figure>
 
@@ -301,8 +304,12 @@
 
             <div class="row">
                 <div class="story">
-                    <figure class="story__shape">
-                        <img src="img/nat-9.jpg" alt="Person on a tour" class="story__img">
+                    <figure class="story__shape">                            
+                        <img srcset="img/nat-9-small.jpg 300w, img/nat-9.jpg 1000w"
+                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300vw"
+                            alt="Person on a tour" 
+                            class="story__img" 
+                            src="img/nat-9.jpg">
                         <figcaption class="story__caption">Jack Wilson</figcaption>
                     </figure>
 
