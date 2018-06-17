@@ -18,7 +18,7 @@
         rgba($color-primary-light, 0.801), 
         rgba($color-primary-dark, 0.801)
     ), 
-    url(../img/nat-4.jpg);
+    url(../img/nat-4-small.jpg);
     background-size: cover;
 
     transform: skewY(-7deg);  // skews the entire section
@@ -26,6 +26,19 @@
     & > * {
         transform: skewY(7deg); // unskew the children though.
     }
+
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+            (min-width: 125em) {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-light, 0.801), 
+            rgba($color-primary-dark, 0.801)
+        ), 
+        url(../img/nat-4.jpg);
+    }
+
+
 
     @include respond(tab-port) {
         padding: 10rem 0;
