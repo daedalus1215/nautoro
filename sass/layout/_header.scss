@@ -6,8 +6,7 @@
        to right bottom,
      rgba($color-primary-light, 0.801), 
      rgba($color-primary-dark, 0.801)), 
-    url(../img/hero.jpg);
-
+     url(../img/hero-small.jpg);
     background-size: cover;
     background-position: center; /* ensures that the center stays the same but bottom and top will crop as the width shrinks. */
     position: relative;
@@ -15,6 +14,16 @@
     
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);    
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+
+    // resolution for Apple high resolution screens.
+    @media (min-resolution: 192dpi) {
+        background-image: linear-gradient(
+            to right bottom,
+          rgba($color-primary-light, 0.801), 
+          rgba($color-primary-dark, 0.801)), 
+         url(../img/hero.jpg);
+    }
 
 
     @include respond(phone) {
