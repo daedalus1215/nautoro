@@ -27,8 +27,9 @@
         // push the text a little away from the circle.
         transform: translateX(-3rem) skewX(12deg);
         position: relative; // so the &__caption's position property is handled correctly.
-        overflow: hidden;
-
+        overflow: hidden; // hide the outside part of the picture to respect the clip-path property.
+        border-radius: 50%;
+        
         @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
             // this will shape the element so that it is a circle
             -webkit-clip-path: circle(50% at 50% 50%);
