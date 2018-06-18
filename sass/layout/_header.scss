@@ -18,6 +18,7 @@
 
     // resolution for Apple high resolution screens. Apply code if 192 AND min-wdith of 600px+ OR width is 2000px+
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
+           (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // this one is for safari to utilize the property
            (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom,
