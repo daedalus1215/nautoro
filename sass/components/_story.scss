@@ -23,19 +23,19 @@
     &__shape {
         width: 15rem;
         height: 15rem;
-        float: left;
-        
-        position: relative; // so the &__caption's position property is handled correctly.
-
-        // This will make the text behave like it is wrapping around the circle.
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        shape-outside: circle(50% at 50% 50%);
-
-        // this will shape the element so that it is a circle
-        clip-path: circle(50% at 50% 50%);
-
+        float: left;        
         // push the text a little away from the circle.
         transform: translateX(-3rem) skewX(12deg);
+        position: relative; // so the &__caption's position property is handled correctly.
+        overflow: hidden;
+
+        @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+            // this will shape the element so that it is a circle
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+        }
+    
+
 
         @include respond(phone) {
             transform: translateX(-3rem) skewX(0);        
