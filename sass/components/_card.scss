@@ -17,7 +17,7 @@
         top: 0;
         left: 0;
         width: 100%;
-
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden; // when we rotate on the Y access a side element we want to make sure that it's back is not exposed.
 
         // border radius properties, overflow is required because the image will overlay the corners and override the border-radius.
