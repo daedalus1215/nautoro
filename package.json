@@ -4,12 +4,14 @@
     "description": "Landing page for nautoro",
     "main": "index.js",
     "scripts": {
-        "compile:sass": "node-sass sass/main.scss css/style.css",
-        "compile:watch-sass": "sass --watch sass:css"
+        "watch:sass": "node-sass sass/main.scss css/style.css -w",
+        "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+        "concat:css": ""
     },
     "author": "larry",
     "license": "ISC",
     "devDependencies": {
+        "concat": "^1.0.3",
         "node-sass": "^4.5.3"
     }
 }
