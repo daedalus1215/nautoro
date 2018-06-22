@@ -6,7 +6,7 @@
     "browserslist": [
         "> 1%",
         "IE 10"
-      ],
+    ],
     "scripts": {
         "watch:sass": "node-sass sass/main.scss css/style.css -w",
         "compile:sass": "node-sass sass/main.scss css/style.comp.css",
