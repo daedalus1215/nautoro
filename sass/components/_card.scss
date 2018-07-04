@@ -187,8 +187,11 @@
 
 
 
-    @include respond(tab-port) {        
-        height: auto; // we set this height here so that the front side was the same as the back side and also to make sure the sides are the same as the container, but that is no longer necessary and so we don't want that - so we set to auto.
+//    @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+         only screen and (hover: none) {  // 900px
+
+    height: auto; // we set this height here so that the front side was the same as the back side and also to make sure the sides are the same as the container, but that is no longer necessary and so we don't want that - so we set to auto.
         border-radius: 3px;
         background-color: $color-white;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
